@@ -82,6 +82,28 @@ onMounted(() => {
 
   const connectParticles = () => {
     for (let a = 0; a < particles.length; a++) {
+      let opacityValue = 1;
+      // Connect to mouse
+        const dxMouse = particles[a].x - mouse.x;
+        const dyMouse = particles[a].y - mouse.y;
+        const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+
+        if (distMouse < MOUSE_DISTANCE) {
+            const opacity = 1 - (distMouse / MOUSE_DISTANCE);
+            ctx.strokeStyle = `rgba(100, 200, 255, ${opacity * 0.8})`; // Brighter Blue
+            ctx.lineWidth = 2; // Thicker line
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+
+            // Highlight particle
+            ctx.beginPath();
+            ctx.fillStyle = `rgba(100, 200, 255, ${opacity})`;
+            ctx.arc(particles[a].x, particles[a].y, particles[a].size * 1.5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
       for (let b = a; b < particles.length; b++) {
         const dx = particles[a].x - particles[b].x;
         const dy = particles[a].y - particles[b].y;
@@ -96,21 +118,6 @@ onMounted(() => {
           ctx.lineTo(particles[b].x, particles[b].y);
           ctx.stroke();
         }
-      }
-      
-      // Connect to mouse
-      const dx = particles[a].x - mouse.x;
-      const dy = particles[a].y - mouse.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      
-      if (distance < MOUSE_DISTANCE) {
-          const opacity = 1 - (distance / MOUSE_DISTANCE);
-          ctx.strokeStyle = `rgba(100, 200, 255, ${opacity * 0.3})`; // Blue tint for mouse connection
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(particles[a].x, particles[a].y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.stroke();
       }
     }
   };
