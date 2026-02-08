@@ -13,11 +13,7 @@ export default defineConfig({
     root: '.', // Ensure root is project root
     publicDir: 'public',
     build: {
-        outDir: 'public/build',
-        manifest: true,
-        rollupOptions: {
-            input: 'resources/js/app.ts',
-        },
+        outDir: 'dist',
     },
     server: {
         host: 'localhost',
