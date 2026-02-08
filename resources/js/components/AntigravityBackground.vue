@@ -59,7 +59,7 @@ onMounted(() => {
 
   const initParticles = () => {
     particles = [];
-    const particleCount = Math.floor(window.innerWidth * window.innerHeight / 7000); // Higher density
+    const particleCount = Math.floor(window.innerWidth * window.innerHeight / 15000); // Density based on area
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvas.width, canvas.height));
     }
