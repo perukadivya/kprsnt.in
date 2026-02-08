@@ -26,6 +26,16 @@ onMounted(async () => {
     <div v-if="loading" class="text-center text-gray-400">Loading...</div>
     
     <div v-else>
+      <div v-if="resume.summary" class="mb-12 animate-fade-in-up">
+        <h3 class="text-2xl font-bold text-green-400 mb-6 flex items-center">
+          <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+          Professional Summary
+        </h3>
+        <p class="text-gray-300 leading-relaxed text-lg border-l-2 border-gray-700 ml-1 pl-8">
+          {{ resume.summary }}
+        </p>
+      </div>
+
       <div class="mb-12">
         <h3 class="text-2xl font-bold text-blue-400 mb-6 flex items-center">
           <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>

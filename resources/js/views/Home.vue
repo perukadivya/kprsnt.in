@@ -8,12 +8,18 @@ import AntigravityBackground from '../components/AntigravityBackground.vue';
     
     <div class="z-10 text-center px-4">
       <h1 class="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mb-6 animate-fade-in-up">
-        Divya
+        DIVYA MOUNIKA
       </h1>
-      <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in-up delay-100">
-        Full Stack Developer & Creative Technologist
+      <p class="text-xl md:text-2xl text-gray-300 mb-4 max-w-2xl mx-auto animate-fade-in-up delay-100">
+        English & Math Teacher | Math Trainer
       </p>
       
+      <div class="text-gray-400 mb-8 animate-fade-in-up delay-100 flex flex-col items-center gap-2">
+        <p>📍 Hyderabad, India</p>
+        <p>📞 +91 7013753349</p>
+        <p>✉️ perukadivya0@gmail.com</p>
+      </div>
+
       <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
         <router-link 
           to="/projects" 
@@ -21,11 +27,12 @@ import AntigravityBackground from '../components/AntigravityBackground.vue';
         >
           View Work
         </router-link>
-        <button 
+        <a 
+          href="mailto:perukadivya0@gmail.com"
           class="px-8 py-3 border border-gray-600 hover:border-white text-gray-300 hover:text-white rounded-full font-medium transition-all"
         >
           Contact Me
-        </button>
+        </a>
       </div>
     </div>
   </div>

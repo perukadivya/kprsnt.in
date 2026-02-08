@@ -5,10 +5,10 @@ class SkillsController {
         header('Content-Type: application/json');
         
         $skills = [
-            'Frontend' => ['Vue.js', 'React', 'Tailwind CSS', 'TypeScript', 'Vite'],
-            'Backend' => ['PHP', 'Node.js', 'Python', 'Laravel', 'SQL'],
-            'Tools' => ['Git', 'Docker', 'AWS', 'Figma', 'VS Code'],
-            'AI/ML' => ['Python', 'TensorFlow', 'OpenAI API', 'Gemini API']
+            'Core Competencies' => ['Activity-based Teaching', 'Play-way Method', 'Lesson Planning', 'Classroom Management', 'Student Assessment', 'Feedback Delivery'],
+            'Subject Expertise' => ['CBSE Curriculum', 'Math Concept Training', 'Problem Solving', 'English Grammar', 'Storytelling', 'Creative Activities'],
+            'Soft Skills' => ['Parent Communication', 'Patience', 'Dedication', 'Positive Attitude', 'Quick Learner', 'Team Collaboration'],
+            'Tools & Methods' => ['Worksheet Design', 'Performance Reporting', 'Interactive Learning', 'Holistic Development']
         ];
 
         echo json_encode(['data' => $skills, 'status' => 'success']);
